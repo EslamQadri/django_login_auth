@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+
+    {%for message in messages %}
+<div class="alert alert-{{message.tag}} alert-dismissible fade show" role="alert"></div>
+<h2> Message{{message}}</h2>
+{%endfor%}
+
+    {%if user.is_authenticated%}
+
+    <h4> hello! {{fname}}</h4>
+    <h3>you are logged in</h3>
+    <a href = "{%url 'logout' %}" ><button >logout</button></a>
+
+    {%else %}
+    <h4>log in plz kalba </h4>
+    <a href = "{%url 'login' %}" ><button >login</button></a>
+    {%endif%}
+
+</body>
+</html>
